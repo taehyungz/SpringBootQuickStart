@@ -16,6 +16,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+	implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.30.Final'
+
 }
 
 test {
