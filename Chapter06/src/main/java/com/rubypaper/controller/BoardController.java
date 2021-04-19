@@ -23,7 +23,6 @@ public class BoardController {
     @RequestMapping("/getBoardList")
     public String getBoardList(Model model, Board board) {
         List<Board> boardList = boardService.getBoardList(board);
-
         model.addAttribute("boardList", boardList);
         return "getBoardList";
 //        for (int i = 1; i<= 10; i++) {
@@ -68,5 +67,10 @@ public class BoardController {
     public String deleteBoard(Board board) {
         boardService.deleteBoard(board);
         return "forward:getBoardList";
+    }
+
+    @GetMapping("/hello")
+    public void hello(Model model) {
+        model.addAttribute("greeting", "Hello 타임리프.^^");
     }
 }

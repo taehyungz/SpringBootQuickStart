@@ -30,6 +30,7 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
 	//JSP 사용을 위한 의존성 추가 끝
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 test {

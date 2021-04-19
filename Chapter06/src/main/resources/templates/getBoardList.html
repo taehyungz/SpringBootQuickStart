@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시 글 목록</title>
+</head>
+
+<body th:align="center">
+<h1>게시글 목록</h1>
+<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0" th:width="700">
+    <tr>
+        <th bgcolor="orange" width="100">번호</th>
+        <th bgcolor="orange" width="200">제목</th>
+        <th bgcolor="orange" width="150">작성자</th>
+        <th bgcolor="orange" width="150">등록일</th>
+        <th bgcolor="orange" width="100">조회수</th>
+    </tr>
+
+    <tr th:each="board, state : ${boardList}">
+        <td th:text="${state.count}"></td>
+        <td><a th:href="@{/getBoard(seq=${board.seq})}" th:text="${board.title}"></a></td>
+        <td th:text="${board.writer}"></td>
+        <td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}"></td>
+        <td th:text="${board.cnt}"></td>
+    </tr>
+</table>
+<br>
+<a th:href="@{insertBoard}">새 글 등록</a>
+</body>
+</html>
