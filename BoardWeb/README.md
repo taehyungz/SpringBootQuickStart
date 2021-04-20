@@ -38,3 +38,33 @@ Service Interface <-(implements)-- ServiceImpl --(use)-> Repository, Entity
     2) 컨트롤러 수정(BoardController.java)
 #### 2.2.3 글 수정과 글 삭제 기능 구현하기
     1) 컨트롤러 수정(BoardController.java)
+
+### 2.3 스프링 시큐리티 적용하기
+#### 2.3.1 시큐리티 커스터마이징하기
+    1) 시큐리티 스타터 추가
+    2) UserDetails 클래스 생성
+    3) UserDetailService 클래스 만들기
+    4) 시큐리티 설정 클래스 만들기(SecurityConfig.java)
+#### 2.3.2 시큐리티 화면 개발하기
+    1) 컨트롤러 작성(SecurityController.java)
+    2) 로그인 화면 추가(login.html)
+    3) 접근 권한 없음 화면 추가(accessDenied.html)
+    4) 관리자 전용 화면 추가(adminPage.html)
+#### 2.3.3 비밀번호 암호화하기
+    1) 패스워드 인코더를 사용하기 위해 시큐리티 설정에 패스워드 인코더 빈 등록 추가(SecurityConfig.java)
+    2) SecurityUser에서 패스워드 인코딩 하기 전 {noop}을 붙인 것을 제거
+#### 2.3.4 글 등록 기능 구현하기
+    1) BoardController의 insertBoard() 수정
+
+### 2.4 기타기능 추가하기
+#### 2.4.1 타임리프에서 로그인 정보 이용하기
+    1) thymeleaf-extras-springsecurity5 의존성 추가
+    2) 글 목록 화면에 사용자 이름 출력(getBoardList.html)
+    3) 상세 화면에서 권한 체크(ADMIN 권한만 글 삭제 가능)
+    4) 글 등록 화면에 사용자 이름 출력
+#### 2.4.2 검색 기능 추가하기
+    1) 검색화면 추가(getBoardList.html)
+    2) 검색 전용 클래스 추가(Search.java)
+    3) 컨트롤러 수정(getBoardList(Model model, Search search) 추가
+    4) 리포지토리 수정하기(BoardRepository.java)
+    5) 서비스 컴포넌트 수정(BoardService.java)
